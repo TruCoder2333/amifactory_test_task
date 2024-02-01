@@ -1,10 +1,8 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from movieapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('genres/', views.genre_list, name='genre-list'),
-    path('persons/', views.person_list, name='person-list'),
-    path('movies/', views.movie_list, name='movie-list'),
+    path('api/v1/', include('movieapp.urls')),
 ]
